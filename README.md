@@ -1,24 +1,6 @@
-# vue2-test
+### 本项目记录一些 vue 开发功能业务点
 
-## Project setup
-```
-pnpm install
-```
+### html 转 PDF 功能
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [PDF 处理分页](https://blog.csdn.net/qq_26754937/article/details/124729628)
+- [掘金生成 pdf](https://juejin.cn/post/6844903886994538510)

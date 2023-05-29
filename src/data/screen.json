@@ -1,0 +1,22 @@
+{
+    "dataList": null,
+    "data": {},
+    "resultData": {
+        "bootOptionScreenId": 1,
+        "screenId": 3,
+        "display3d": 99,
+        "gsync": 2,
+        "hdmi": 2,
+        "screenHz": 20,
+        "vertical": 99,
+        "zoom": 175,
+        "gpu": 4
+    },
+    "pageSize": 0,
+    "pageNum": 0,
+    "totalNum": 0,
+    "sEcho": "0",
+    "msgCode": null,
+    "message": "成功",
+    "success": true
+}

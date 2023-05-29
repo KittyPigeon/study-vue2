@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <router-link to="pdf">html生成PDF</router-link>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import config from './config'
 export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+  name: 'HomeView',
+  data() {
+    return {
+      form: {
+        name: ''
+      },
+      config
+    }
+  }
+}
 </script>
