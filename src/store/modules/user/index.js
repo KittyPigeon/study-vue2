@@ -1,8 +1,8 @@
 export default {
   state: {
     userInfo: {
-        name:'宋江',
-        age:28
+      name: '宋江',
+      age: 28
     }
   },
   mutations: {
@@ -14,7 +14,6 @@ export default {
   getters: {
     isLogin(state) {
       return state.userInfo ? true : false
-    },
-    
+    }
   }
 }
