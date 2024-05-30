@@ -1,14 +1,13 @@
 <template>
-    <div>导航栏</div>
+  <div>导航栏</div>
 </template>
 
 <script>
-    export default {
-        name: '',
-        data() {
-            return {}
-        }
-    }
+export default {
+  name: '',
+  data() {
+    return {}
+  }
+}
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view />
+      <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
+
+    <!-- 不需要缓存 -->
+
+    <router-view v-if="!$route.meta.keepAlive" />
   </div>
 </template>
 

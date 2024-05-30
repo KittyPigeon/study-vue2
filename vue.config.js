@@ -4,6 +4,9 @@ const CompressionPlugin = require('compression-webpack-plugin') //引入gzip压�
 
 module.exports = {
   lintOnSave: false,
+  devServer: {
+    hot: true
+  },
   chainWebpack(config) {
     config.resolve.alias.set('@', path.resolve(__dirname, 'src'))
   },

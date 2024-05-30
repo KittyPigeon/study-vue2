@@ -11,7 +11,7 @@ import VueLazyload from 'vue-lazyload'
 // Vue.use(VueLazyload)
 import loadimage from '@/assets/loading.png'
 import errorimage from '@/assets/images/xxth.png'
-
+import Bus from '@/utils/bus'
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: errorimage,
@@ -20,7 +20,7 @@ Vue.use(VueLazyload, {
 })
 
 // html 生成pdf
-Vue.use(HtmlToPdf);
+Vue.use(HtmlToPdf)
 Vue.config.productionTip = false
 
 // 引入element-ui库
@@ -29,7 +29,13 @@ Vue.use(ElementUI)
 // 自定义指令
 Vue.use(hasPermission)
 
-//
+// 方案一：
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log('first contentful painting')
+})
+var data = performance.getEntriesByName('first-contentful-paint')[0]
+console.log('data',data)
+Vue.prototype.$bus = new Bus();
 new Vue({
   router,
   store,

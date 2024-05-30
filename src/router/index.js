@@ -3,13 +3,20 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
+// permission judge function
+function hasPermission(roles, permissionRoles) {
+  if (roles.indexOf('admin') >= 0) return true // admin permission passed directly
+  if (!permissionRoles) return true
+  return roles.some((role) => permissionRoles.indexOf(role) >= 0)
+}
+
+const whiteList = ['/login', '/authredirect']// no redirect whitelist
 
 const routes = [
   {
     path: '/',
     name: 'homeView',
-    component: HomeView,
-    
+    component: HomeView
   },
   {
     path: '/about',
@@ -20,20 +27,20 @@ const routes = [
     path: '/home',
     name: 'home',
     component: () => import(/* webpackChunkName: "about" */ '@/views/home/home.vue'),
-    redirect:'/home/profile',
-    children:[
+    redirect: '/home/profile',
+    children: [
       {
-        path:'profile',
-        name:'profile',
-        meta:{
-          title:'用户数据',
-          isAlive:true,
+        path: 'profile',
+        name: 'profile',
+        meta: {
+          title: '用户数据',
+          keepAlive: true
         },
         // component:() => import(/* webpackChunkName: "about" */ '@/views/home/profile.vue'),
-        components:{
-          default:()=>import ('@/views/home/profile'),
-          navList:()=>import('@/components/navList'),
-        },
+        components: {
+          default: () => import('@/views/home/profile'),
+          navList: () => import('@/components/navList')
+        }
       }
     ]
   },
@@ -75,6 +82,25 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/HtmlToPdf.vue')
+  },
+  {
+    path: '/interview',
+    name: 'interview',
+    meta: {
+      title: '面试',
+      keepAlive: true
+    },
+    component: () => import(/* webpackChunkName: "about" */ '../views/interview/index.vue')
+  },
+  {
+    path: '/interviewDetail',
+    name: 'interviewDetail',
+    component: () => import(/* webpackChunkName: "about" */ '../views/interview/detail.vue')
+  },
+  {
+    path: '/tabs',
+    name: 'tabs',
+    component: () => import(/* webpackChunkName: "about" */ '../views/interview/tab.vue')
   }
 ]
 

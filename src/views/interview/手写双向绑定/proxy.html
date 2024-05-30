@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //
+      function isObject(obj) {
+        return Object.prototype.toString.call(obj) === '[object Object]'
+      }
+      function reactive(obj) {
+        if (typeof obj != 'object' || obj == null) {
+          return obj
+        }
+        var observed = new Proxy(obj, {
+          get(target, key, receiver) {
+            const res = Reflect.get(target, key, receiver)
+            console.log(`获取:${target}:${key}`)
+            return isObject(res) ? reactive(res) : res
+          },
+          set(target, key, value, receiver) {
+            const res = Reflect.set(target, key, value, receiver)
+            console.log(`设置:${target}:${key}:${value}`)
+            return res
+          },
+          deleteProperty(target, key) {
+            const res = Reflect.defineProperty(target, key)
+            console.log(`删除:${target}:${key}`)
+            return res
+          }
+        })
+        return observed
+      }
+      const state = reactive({
+        foo: '张三',
+        bar: {
+          a: 1
+        }
+      })
+      console.log('state', state.foo)
+      state.foo = '李逵'
+      console.log('state', state)
+      state.bar.a = 2
+      console.log('state', state)
+
+      const arr=reactive([1,2,3]);
+      arr.push(4);
+      console.log('arr', arr)
+    </script>
+  </body>
+</html>

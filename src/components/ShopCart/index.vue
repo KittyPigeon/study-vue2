@@ -3,18 +3,17 @@
 </template>
 
 <script>
-import Bus from '@/utils/bus';
+import Bus from '@/utils/bus'
 export default {
   name: '',
   data() {
     return {}
   },
-  created(){
-    Bus.$on('login',(val)=>{
-        console.log(val)
+  created() {
+    Bus.$on('login', (val) => {
+      console.log(val)
     })
   }
 }
 </script>
-<style  lang="less" scoped>
-</style>
+<style lang="less" scoped></style>
