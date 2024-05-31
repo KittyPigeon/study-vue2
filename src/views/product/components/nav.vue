@@ -1,23 +1,15 @@
 <!--  -->
 <template>
-  <div class="">
-    <component :is="comp"></component>
-    <button @click="test">修改组件</button>
-  </div>
+  <div class="">导航栏</div>
 </template>
 
 <script>
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {
-    shopcart: () => import('./components/shopcart'),
-    navBar: () => import('./components/nav')
-  },
+  components: {},
   data() {
     //这里存放数据
-    return {
-      comp: 'shopcart'
-    }
+    return {}
   },
   //监听属性 类似于data概念
   computed: {},
@@ -35,11 +27,7 @@ export default {
   destroyed() {}, //生命周期 - 销毁完成
   activated() {},
   //方法集合
-  methods: {
-    test() {
-      this.comp = this.comp === 'shopcart' ? 'navBar' : 'shopcart'
-    }
-  } //如果页面有keep-alive缓存功能，这个函数会触发
+  methods: {} //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style lang="less" scoped>

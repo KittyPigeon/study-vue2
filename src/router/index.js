@@ -10,7 +10,7 @@ function hasPermission(roles, permissionRoles) {
   return roles.some((role) => permissionRoles.indexOf(role) >= 0)
 }
 
-const whiteList = ['/login', '/authredirect']// no redirect whitelist
+const whiteList = ['/login', '/authredirect'] // no redirect whitelist
 
 const routes = [
   {
@@ -101,6 +101,11 @@ const routes = [
     path: '/tabs',
     name: 'tabs',
     component: () => import(/* webpackChunkName: "about" */ '../views/interview/tab.vue')
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: () => import(/* webpackChunkName: "about" */ '../views/product/index.vue')
   }
 ]
 
