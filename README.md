@@ -9,9 +9,6 @@
 ## vue面试题
 
 ## vue eslint校验 prttier校验
-<<<<<<< HEAD
-=======
 fsdf
 hello world
 abc
->>>>>>> develop
