@@ -17,3 +17,12 @@
 git add readme.md
 git add .
 git commit 
+修改上一次的 commit 訊息：
+git commit --amend
+git checkout -b feature/feature-git-study
+git branch -d feature/feature-git-study
+
+## 参考文献
+
+[git 学习网站](https://juejin.cn/post/6869519303864123399?searchId=20240829104940D19D0193F1ED08A4F5DC)
+
