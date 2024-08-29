@@ -9,3 +9,11 @@
 ## vue面试题
 
 ## vue eslint校验 prttier校验
+
+
+## git 常用指令
+- git 项目初始化 git init
+- git commit 
+git add readme.md
+git add .
+git commit 
