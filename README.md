@@ -18,7 +18,8 @@ git add readme.md
 git add .
 git commit 
 修改上一次的 commit 訊息：
-git commit --amend
+git commit --amend ## 优雅修改最后一次commit 
+
 
 - 分支
 git branch -d feature/feature-git-study // 删除本地分支
